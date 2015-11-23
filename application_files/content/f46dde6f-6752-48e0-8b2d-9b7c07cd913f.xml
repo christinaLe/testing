@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CRM_OpportunityAccountDetailsSection</name>
+        <uuid>f46dde6f-6752-48e0-8b2d-9b7c07cd913f</uuid>
+        <description>The section containing Account Details for the Opportunity Record Dashboard ui</description>
+        <parentUuid>_a-0000d78e-0222-8000-9ba2-011c48011c48_23100</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>if(ri!dashboardReadOnly,&#xD;
+		{#&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+		  label:&quot;Account Details&quot;,&#xD;
+		  isCollapsible: ri!isCollapsible,&#xD;
+		  isInitiallyCollapsed: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!isInitiallyCollapsed), false, ri!isInitiallyCollapsed),&#xD;
+		  firstColumnContents:{&#xD;
+			/* a!paragraphField(label:&quot;soqlQuery&quot;, labelPosition:&quot;ADJACENT&quot;,value:rf!soqlQuery,readOnly:true), */&#xD;
+			&#xD;
+			if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!dbCrmOpp),&#xD;
+			#&quot;SYSTEM_SYSRULES_textField&quot;(label:&quot;Account Name&quot;, labelPosition:&quot;ADJACENT&quot;,value:ri!crmOppSource.nameFromAccount,readOnly:true),&#xD;
+			#&quot;SYSTEM_SYSRULES_linkField&quot;(label:&quot;Account Name&quot;, labelPosition:&quot;ADJACENT&quot;,links:#&quot;SYSTEM_SYSRULES_recordLink&quot;(label:ri!crmOppSource.nameFromAccount,recordType:#&quot;_a-0000d72a-ff60-8000-9ba2-011c48011c48_11769&quot; ,identifier:ri!dbCrmOpp.account.customerId))&#xD;
+			),&#xD;
+		    #&quot;SYSTEM_SYSRULES_textField&quot;(label:&quot;Industry&quot;, labelPosition:&quot;ADJACENT&quot;,value:ri!crmOppSource.accountIndustry,readOnly:true),&#xD;
+		    #&quot;SYSTEM_SYSRULES_textField&quot;(label:&quot;Sales Region&quot;, labelPosition:&quot;ADJACENT&quot;,value:ri!crmOppSource.regionC,readOnly:true),&#xD;
+		    if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(ri!dbCrmOpp),{},&#xD;
+		      #&quot;SYSTEM_SYSRULES_textField&quot;(label:&quot;PS Region&quot;, labelPosition:&quot;ADJACENT&quot;,&#xD;
+		        value:ri!dbCrmOpp.account.region.regionName,readOnly:true)&#xD;
+		    )&#xD;
+		},&#xD;
+		secondColumnContents:{&#xD;
+		/* a!textField(label:&quot;Account Executive&quot;,value:ri!dbCrmOpp.account.accountExecutive), */&#xD;
+		&#xD;
+		  if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(ri!dbCrmOpp),{},&#xD;
+		    #&quot;SYSTEM_SYSRULES_textField&quot;(label:&quot;Account Type&quot;, labelPosition:&quot;ADJACENT&quot;,value:ri!dbCrmOpp.account.type.name,readOnly:true)),&#xD;
+		  if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!crmOppSource.accountWebsite),{},&#xD;
+		    #&quot;SYSTEM_SYSRULES_linkField&quot;(label:&quot;Company Website&quot;,labelPosition:&quot;ADJACENT&quot;,&#xD;
+		      links:#&quot;SYSTEM_SYSRULES_safeLink&quot;(label:ri!crmOppSource.accountWebsite,uri:#&quot;_a-0000d79c-2e84-8000-9ba2-011c48011c48_24014&quot;(ri!crmOppSource.accountWebsite)))&#xD;
+		    ),&#xD;
+		    #&quot;SYSTEM_SYSRULES_linkField&quot;(label:&quot;SalesForce Account Page&quot;, labelPosition:&quot;ADJACENT&quot;,&#xD;
+		      links:#&quot;SYSTEM_SYSRULES_safeLink&quot;(label:#&quot;_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013&quot;(ri!truncatedAccountId),uri:#&quot;_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013&quot;(ri!truncatedAccountId) ))			&#xD;
+		}&#xD;
+		)},&#xD;
+		&#xD;
+		{}&#xD;
+) /*Ends if*/&#xD;
+	</definition>
+        <namedTypedValue>
+            <name>crmOppSource</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>dashboardReadOnly</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>dbCrmOpp</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>truncatedAccountId</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isCollapsible</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isInitiallyCollapsed</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>christina.le</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>crmOppSource</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>dashboardReadOnly</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>dbCrmOpp</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>truncatedAccountId</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>isCollapsible</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>isInitiallyCollapsed</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul>

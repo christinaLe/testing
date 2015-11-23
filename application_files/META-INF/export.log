@@ -1,0 +1,662 @@
+Success (4):
+content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb "CRM_OpportunityNextStepsAndNotesSection"
+content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 "CRM_OpportunityBusinessDetailsSection"
+content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f "CRM_OpportunityAccountDetailsSection"
+application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 "2015-11-23_1250 CRM Opp Details Patch"
+
+Referenced precedents that were not exported (18):
+user christina.le christina.le
+content 3782 _a-0000d62a-67b3-8000-da6f-010000010000_950
+content 21410 _a-0000d78e-0222-8000-9ba2-011c48011c48_23100
+content 109155 _a-0000dac7-230c-8000-9ba2-011c48011c48_115323
+content 142048 _a-0000db23-cbc2-8000-9ba2-011c48011c48_149013
+content 3783 _a-0000d62a-67b3-8000-da6f-010000010000_951
+content 21516 _a-0000d78e-0222-8000-9ba2-011c48011c48_23208
+content 62764 _a-0000d981-73a0-8000-9ba2-011c48011c48_66825
+content 21391 _a-0000d73e-93de-8000-3ca7-0a000064044c_39488
+content 50512 994fea4a-f42f-45af-8b36-44d8dc571752
+content 156339 bce4789d-726c-44c0-b613-738201cbcb1b
+content 96403 _a-0000da86-913c-8000-9ba2-011c48011c48_102141
+content 57139 _a-0000d943-9a50-8000-9ba2-011c48011c48_61009
+content 108951 _a-0000dac7-230c-8000-9ba2-011c48011c48_115073
+content 109147 _a-0000dac7-230c-8000-9ba2-011c48011c48_115315
+content 62237 _a-0000d981-7235-8000-9ba2-011c48011c48_105190
+content 22160 _a-0000d79c-2e84-8000-9ba2-011c48011c48_24014
+content 10267 _a-0000d72a-ff60-8000-9ba2-011c48011c48_11769
+
+Trace:
+2015-11-23 21:08:43.082 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Begin transport.
+2015-11-23 21:08:43.082 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Retrieving object data.
+2015-11-23 21:08:43.086 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 App associated objects: GlobalIdMap[content=[e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb, _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601, f46dde6f-6752-48e0-8b2d-9b7c07cd913f]]
+2015-11-23 21:08:43.088 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Invalid associated objects: GlobalIdMap[]
+2015-11-23 21:08:43.088 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Adding valid associated objects to be exported: GlobalBindingMap[content={e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb=211464, _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601=211465, f46dde6f-6752-48e0-8b2d-9b7c07cd913f=211466}]
+2015-11-23 21:08:43.088 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Setting uuids of object references.
+2015-11-23 21:08:43.088 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: Application.forum
+2015-11-23 21:08:43.089 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: Application.parent
+2015-11-23 21:08:43.09 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@3a67b7ee[
+  ContentRole[name=readers,inherit=false,allowForAll=false]
+  ContentRole[name=authors,inherit=false,allowForAll=false]
+  ContentRole[name=administrators,inherit=false,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=1:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=false,SEC_INH_EDITOR=false,SEC_INH_VIEWER=false,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-23 21:08:43.09 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: ContentRole[name=readers,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.09 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: ContentRole[name=authors,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.09 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: ContentRole[name=administrators,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.09 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.091 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.091 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.092 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Begin transport.
+2015-11-23 21:08:43.092 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Retrieving object data.
+2015-11-23 21:08:43.115 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Setting uuids of object references.
+2015-11-23 21:08:43.115 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: [Content:id=178638,versionId=-1,name=CRM_OpportunityNextStepsAndNotesSection,description=The section containing Next Steps and Notes for the Opportunity Dashboard,type=32,subtype=1,uuid=e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb,parent=21410,parentName=SE CRM SAIL Rules,parentType=2,log=211464,logName=CRM_OpportunityNextStepsAndNotesSection,state=255,visibility=35,security=143,creator=christina.le,createdTimestamp=2015-11-23 17:42:20.0,updatedTimestamp=2015-11-23 17:42:20.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@4320e30c, system=0, preferredEditor=interface, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@2660a299, definition=if(
+  or(ri!dashboardReadOnly, ri!salesUpdate),
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label:"Next Steps and Notes",
+    isCollapsible: ri!isCollapsible,
+    isInitiallyCollapsed: if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!isInitiallyCollapsed), false, ri!isInitiallyCollapsed),
+    firstColumnContents:{
+      #"SYSTEM_SYSRULES_paragraphField"(
+        label:"Next Steps", 
+    	  labelPosition:"ADJACENT",
+        value: if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!updatedNextStepC),ri!crmOppSource.nextStepC,ri!updatedNextStepC),
+      	saveInto:ri!updatedNextStepC,
+      	readOnly:ri!dashboardReadOnly
+      ),
+      #"SYSTEM_SYSRULES_paragraphField"(
+        label:"Manager Notes", 
+    	  labelPosition:"ADJACENT",
+        value: if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!updatedMgrNotesC),ri!crmOppSource.mgrNotesC,ri!updatedMgrNotesC),
+      	saveInto:ri!updatedMgrNotesC,
+      	readOnly:ri!dashboardReadOnly
+      )		  
+    },
+    secondColumnContents:{
+      #"SYSTEM_SYSRULES_paragraphField"(
+        label:"Opportunity Notes (Business)", 
+        labelPosition: "ADJACENT",
+        value:if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!updatedReportNotesC),ri!crmOppSource.reportNotesC,ri!updatedReportNotesC)
+    	/* rule!APN_truncate(text:ri!crmOppSource.reportNotesC,limit:1000) */
+      	,
+      	saveInto:ri!updatedReportNotesC,
+      	readOnly:ri!dashboardReadOnly
+      	)
+      }
+    ),
+    {}
+), dep_types=[Ljava.lang.String;@2aba496b, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@2efb0726, dep_variables=[[Ljava.lang.String;@6a07a976},partition=1,partitionName=/usr/local/appian/ae/_admin/accdocs1]
+2015-11-23 21:08:43.117 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: FreeformRule.forum
+2015-11-23 21:08:43.118 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=crmOppSource,it=97,v=<null>]
+2015-11-23 21:08:43.118 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=dashboardReadOnly,it=26,v=<null>]
+2015-11-23 21:08:43.118 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=salesUpdate,it=97,v=<null>]
+2015-11-23 21:08:43.118 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=updatedNextStepC,it=97,v=<null>]
+2015-11-23 21:08:43.118 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=updatedMgrNotesC,it=97,v=<null>]
+2015-11-23 21:08:43.119 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=updatedReportNotesC,it=97,v=<null>]
+2015-11-23 21:08:43.119 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=isCollapsible,it=97,v=<null>]
+2015-11-23 21:08:43.119 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: TypedVariable[name=isInitiallyCollapsed,it=26,v=<null>]
+2015-11-23 21:08:43.119 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: FreeformRule.parent
+2015-11-23 21:08:43.121 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@743087b3[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[christina.le],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-23 21:08:43.121 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.121 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.121 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: ContentRole[name=administrators,usernames=[christina.le],inherit=true,allowForAll=false]
+2015-11-23 21:08:43.122 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.122 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.122 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.124 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Exporting binary resources.
+2015-11-23 21:08:43.124 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Serializing object to XML.
+2015-11-23 21:08:43.141 DEBUG content 211464 e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb Object transported.
+2015-11-23 21:08:43.141 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Begin transport.
+2015-11-23 21:08:43.141 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Retrieving object data.
+2015-11-23 21:08:43.167 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Setting uuids of object references.
+2015-11-23 21:08:43.167 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: [Content:id=182795,versionId=-1,name=CRM_OpportunityBusinessDetailsSection,description=The section containing Opportunity Details: Business for the Opportunity Record Dashboard ui,type=32,subtype=1,uuid=_a-0000dbc0-2835-8000-9ba2-011c48011c48_191601,parent=21410,parentName=SE CRM SAIL Rules,parentType=2,log=211465,logName=CRM_OpportunityBusinessDetailsSection,state=255,visibility=35,security=15,creator=christina.le,createdTimestamp=2015-11-23 17:42:26.0,updatedTimestamp=2015-11-23 17:42:26.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@21c158ce, system=0, preferredEditor=interface, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@4db44057, definition=#"SYSTEM_SYSRULES_sectionLayout"(
+  label: "Opportunity Details: Business",
+  isCollapsible: ri!isCollapsible,
+  isInitiallyCollapsed: if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!isInitiallyCollapsed), false, ri!isInitiallyCollapsed),
+  firstColumnContents: {
+    if(
+      ri!dashboardReadOnly,
+      {
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Opportunity Name",
+          labelPosition: "ADJACENT",
+          value: ri!crmOppSource.name,
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Type",
+          labelPosition: "ADJACENT",
+          value: ri!crmOppSource.type,
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Total Amount",
+          labelPosition: "ADJACENT",
+          value: if(
+            #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!crmOppSource.amount ),
+            "No Amount",
+            dollar( ri!crmOppSource.amount,  0, 0 )
+          ),
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Software",
+          labelPosition: "ADJACENT",
+          value: dollar(ri!crmOppSource.amountSoftwareC, 0 ),
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Services",
+          labelPosition: "ADJACENT",
+          value: dollar( ri!crmOppSource.amountServicesC, 0 ),
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Maintenance 1st Year",
+          labelPosition: "ADJACENT",
+          value: dollar(ri!crmOppSource.amountMaintenance1stYearC, 0 ),
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Maintenance Renewal",
+          labelPosition: "ADJACENT",
+          value: dollar( ri!crmOppSource.amountMaintenanceRenewalC, 0 ),
+          readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Training",
+          labelPosition: "ADJACENT",
+          value: dollar( ri!crmOppSource.amountTrainingC, 0 ),
+          readOnly: true
+        ),
+        #"_a-0000d73e-93de-8000-3ca7-0a000064044c_39488"(
+          label: "Won/Lost/In Progress?",
+          bool: if(
+            tointeger(
+              left( ri!crmOppSource.stageName ) ) = 8,
+            true(),
+            if(
+              tointeger(
+                left( ri!crmOppSource.stageName  )  ) < 0,
+              false(),
+              null
+            )
+          ),
+          labelPosition: "ADJACENT"
+        )
+      },
+      {}
+    ),
+    if(
+      ri!dashboardReadOnly,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Current Stage",
+        labelPosition: "ADJACENT",
+        value: if(
+          #"_a-0000d62a-67b3-8000-da6f-010000010000_950"( ri!updatedStageName ),
+          ri!crmOppSource.stageName,
+          ri!updatedStageName
+        ),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_dropdownField"(
+        label: "Current Stage",
+        labelPosition: "ADJACENT",
+        placeholderLabel: "Select a stage.",
+        choiceLabels: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115073",
+        choiceValues: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115073",
+        value: if(
+          #"_a-0000d62a-67b3-8000-da6f-010000010000_950"( ri!updatedStageName  ),
+          ri!crmOppSource.stageName,
+          ri!updatedStageName
+        ),
+        saveInto: ri!updatedStageName,
+        validations: {
+          if(
+            and(
+              contains(
+                {
+                  "8 - Contract Closed",
+                  "7 - Legal",
+                  "6 - Win Decision",
+                  "5 - Value Analysis",
+                  "4 - Solution Development"
+                },
+                ri!updatedStageName
+              ),
+              tointeger(
+                ri!crmOppSource.amountMaintenance1stYearC
+              ) = 0,
+              ri!crmOppSource.type = "Software Sale - Perpetual License"
+            ),
+            "This opportunity is marked as a perpetual license opportunity. Prior to closing this opportunity, please edit the products and break out the amount for first year maintenance.",
+            null
+          ),
+          if(
+            and(
+              contains(
+                {
+                  "4 - Solution Development",
+                  "5 - Value Analysis",
+                  "6 - Win Decision",
+                  "7 - Legal",
+                  "8 - Contract Closed"
+                },
+                ri!updatedStageName
+              ),
+              #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+                ri!crmOppSource.businessProblemProjectC
+              )
+            ),
+            "Project Description is required to advance to the 4 - Solution Development stage and beyond. Please first update Project Description in Salesforce.",
+            null
+          ),
+          if(
+            and(
+              contains(
+                {
+                  "4 - Solution Development",
+                  "5 - Value Analysis",
+                  "6 - Win Decision",
+                  "7 - Legal",
+                  "8 - Contract Closed"
+                },
+                ri!updatedStageName
+              ),
+              not(
+                ri!crmOppSource.hasOpportunityLineItem
+              )
+            ),
+            "Opportunity products are required to advance to the 4 - Solution Development stage and beyond. Please first update Opportunity Products in Salesforce.",
+            null
+          )
+        },
+        validationGroup: "submit"
+      )
+    ),
+    if(
+        ri!dashboardReadOnly,
+      {
+        #"SYSTEM_SYSRULES_textField"(
+        label: "Win Probability",
+        labelPosition: "ADJACENT",
+        value: tointeger(  ri!crmOppSource.probability ) & "%",
+        readOnly: true
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Manager Forecast Status",
+          labelPosition: "ADJACENT",
+          value: #"_a-0000d981-7235-8000-9ba2-011c48011c48_105190"(ri!crmOppSource.mgrForecastStatusC, "Not Specified"),
+          readOnly: true
+        )
+      },
+      {}
+    )
+    
+  },
+  secondColumnContents: 
+  {
+  if(
+      ri!dashboardReadOnly,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Close Date",
+        labelPosition: "ADJACENT",
+        value: #"_a-0000d981-73a0-8000-9ba2-011c48011c48_66825"(
+          if(
+            #"_a-0000d62a-67b3-8000-da6f-010000010000_950"( ri!updatedCloseDate  ),
+            #"_a-0000da86-913c-8000-9ba2-011c48011c48_102141"(
+              ri!crmOppSource.closeDate
+            ),
+            ri!updatedCloseDate
+          )
+        ),
+        readOnly: true
+      ),
+      if(
+        ri!isFinance,
+        {},
+        #"SYSTEM_SYSRULES_dateField"(
+          label: "Close Date",
+          labelPosition: "ADJACENT",
+          value: if(
+            #"_a-0000d62a-67b3-8000-da6f-010000010000_950"( ri!updatedCloseDate  ),
+            #"_a-0000da86-913c-8000-9ba2-011c48011c48_102141"( ri!crmOppSource.closeDate  ),
+            ri!updatedCloseDate
+          ),
+          saveInto: ri!updatedCloseDate
+        )
+      )
+    ),
+  
+  if(
+    ri!dashboardReadOnly,
+    {
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Opportunity Owner",
+        labelPosition: "ADJACENT",
+        value: ri!crmOppSource.ownerName,
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Sales Engineer(s)",
+        labelPosition: "ADJACENT",
+        value: #"_a-0000d943-9a50-8000-9ba2-011c48011c48_61009"(
+          ri!crmOppSource.technicalResourceC
+        ) & "     " & #"_a-0000d943-9a50-8000-9ba2-011c48011c48_61009"(
+          ri!crmOppSource.additionalSalesEngineerC
+        ),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Lead Source",
+        labelPosition: "ADJACENT",
+        value: ri!crmOppSource.leadSource,
+        readOnly: true
+      ),
+      if(
+        #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+          ri!crmOppSource.primaryPartnerAccountSfIdC
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Primary Partner Name",
+          labelPosition: "ADJACENT",
+          value: "Not Specified",
+          readOnly: true
+        ),
+        if(
+          #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+            #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+              ri!crmOppSource.primaryPartnerAccountSfIdC,
+              ri!type3
+            ).data
+          ),
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Primary Partner Name",
+            labelPosition: "ADJACENT",
+            value: #"bce4789d-726c-44c0-b613-738201cbcb1b"(
+              ri!crmOppSource.primaryPartnerAccountSfIdC
+            ),
+            readOnly: true()
+          ),
+          #"SYSTEM_SYSRULES_linkField"(
+            label: "Primary Partner Name",
+            labelPosition: "ADJACENT",
+            links: #"SYSTEM_SYSRULES_recordLink"(
+              Label: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+                ri!crmOppSource.primaryPartnerAccountSfIdC,
+                ri!type3
+              ).data.fullName,
+              recordType: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115323",
+              identifier: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+                ri!crmOppSource.primaryPartnerAccountSfIdC,
+                ri!type3
+              ).data.customerId
+            )
+          )
+        )
+      ),
+      if(
+        #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+          ri!crmOppSource.secondaryPartnerAccountSfIdC
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Secondary Partner Name",
+          labelPosition: "ADJACENT",
+          value: "Not Specified",
+          readOnly: true
+        ),
+        if(
+          #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+            #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+              ri!crmOppSource.secondaryPartnerAccountSfIdC,
+              ri!type3
+            ).data
+          ),
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Secondary Partner Name",
+            labelPosition: "ADJACENT",
+            value: #"bce4789d-726c-44c0-b613-738201cbcb1b"(
+              ri!crmOppSource.secondaryPartnerAccountSfIdC
+            ),
+            readOnly: true()
+          ),
+          #"SYSTEM_SYSRULES_linkField"(
+            label: "Secondary Partner Name",
+            labelPosition: "ADJACENT",
+            links: #"SYSTEM_SYSRULES_recordLink"(
+              Label: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+                ri!crmOppSource.secondaryPartnerAccountSfIdC,
+                ri!type3
+              ).data.fullName,
+              recordType: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115323",
+              identifier: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+                ri!crmOppSource.secondaryPartnerAccountSfIdC,
+                ri!type3
+              ).data.customerId
+            )
+          )
+        )
+      ),
+      if(
+        #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+          ri!crmOppSource.tertiaryPartnerAccountSfIdC
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Tertiary Partner Name",
+          labelPosition: "ADJACENT",
+          value: "Not Specified",
+          readOnly: true
+        ),
+        if(
+          #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+            #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+              ri!crmOppSource.tertiaryPartnerAccountSfIdC,
+              ri!type3
+            ).data
+          ),
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Tertiary Partner Name",
+            labelPosition: "ADJACENT",
+            value: #"bce4789d-726c-44c0-b613-738201cbcb1b"(
+              ri!crmOppSource.tertiaryPartnerAccountSfIdC
+            ),
+            readOnly: true()
+          ),
+          #"SYSTEM_SYSRULES_linkField"(
+            label: "Tertiary Partner Name",
+            labelPosition: "ADJACENT",
+            links: #"SYSTEM_SYSRULES_recordLink"(
+              Label: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+                ri!crmOppSource.tertiaryPartnerAccountSfIdC,
+                ri!type3
+              ).data.fullName,
+              recordType: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115323",
+              identifier: #"_a-0000dac7-230c-8000-9ba2-011c48011c48_115315"(
+                ri!crmOppSource.tertiaryPartnerAccountSfIdC,
+                ri!type3
+              ).data.customerId
+            )
+          )
+        )
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Partner Role",
+        labelPosition: "ADJACENT",
+        value: if(
+          #"_a-0000d62a-67b3-8000-da6f-010000010000_950"(
+            ri!crmOppSource.partnerRoleC
+          ),
+          "Not Specified",
+          ri!crmOppSource.partnerRoleC
+        ),
+        readOnly: true
+      ),
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Deal Type",
+        labelPosition: "ADJACENT",
+        value: ri!crmOppSource.softwareDealTypeC,
+        readOnly: true
+      ),
+      if(
+        #"_a-0000d62a-67b3-8000-da6f-010000010000_951"( ri!dbCrmOpp ),
+        {},
+        with(
+          local!sa: index(
+            ri!dbCrmOpp,
+            "solutionAreas",
+            null
+          ),
+          {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Potential Projects",
+              labelPosition: "ADJACENT",
+              value: #"_a-0000d78e-0222-8000-9ba2-011c48011c48_23208"(
+                local!sa
+              ),
+              readOnly: true
+            ),
+            #"_a-0000d73e-93de-8000-3ca7-0a000064044c_39488"(
+              label: "Responded to RFI/RFP?",
+              bool: or(
+                ri!dbCrmOpp.respondedToRFI,
+                ri!dbCrmOpp.respondedToRFP
+              ),
+              labelPosition: "ADJACENT"
+            )
+          }
+        )
+      ),
+      #"994fea4a-f42f-45af-8b36-44d8dc571752"(
+        compArray: if(
+          isnull(
+            ri!sfOpportunityCompetitor.result.result
+          ),
+          null,
+          ri!sfOpportunityCompetitor.result.result.OpportunityCompetitor.CompetitorName
+        ),
+        labelPosition: "ADJACENT"
+      ),
+      #"SYSTEM_SYSRULES_linkField"(
+        label: "SalesForce Opportunity Page",
+        labelPosition: "ADJACENT",
+        links: #"SYSTEM_SYSRULES_safeLink"(
+          label: #"_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013"(
+            ri!crmOppSource.id
+          ),
+          uri: #"_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013"(
+            ri!crmOppSource.id
+          )
+        )
+      )
+    },
+    {}
+  )
+  }
+), dep_types=[Ljava.lang.String;@75ee97ea, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@6baabd47, dep_variables=[[Ljava.lang.String;@40868fd4},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2015-11-23 21:08:43.178 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: FreeformRule.forum
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=crmOppSource,it=97,v=<null>]
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=dashboardReadOnly,it=26,v=<null>]
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=dbCrmOpp,it=97,v=<null>]
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=updatedStageName,it=97,v=<null>]
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=updatedCloseDate,it=97,v=<null>]
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=isFinance,it=97,v=<null>]
+2015-11-23 21:08:43.179 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=type3,it=97,v=<null>]
+2015-11-23 21:08:43.18 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=sfOpportunityCompetitor,it=97,v=<null>]
+2015-11-23 21:08:43.18 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=isCollapsible,it=97,v=<null>]
+2015-11-23 21:08:43.18 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: TypedVariable[name=isInitiallyCollapsed,it=26,v=<null>]
+2015-11-23 21:08:43.18 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: FreeformRule.parent
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@5cfb3ed0[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.182 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.185 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Exporting binary resources.
+2015-11-23 21:08:43.185 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Serializing object to XML.
+2015-11-23 21:08:43.207 DEBUG content 211465 _a-0000dbc0-2835-8000-9ba2-011c48011c48_191601 Object transported.
+2015-11-23 21:08:43.207 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Begin transport.
+2015-11-23 21:08:43.207 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Retrieving object data.
+2015-11-23 21:08:43.23 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Setting uuids of object references.
+2015-11-23 21:08:43.23 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: [Content:id=178609,versionId=-1,name=CRM_OpportunityAccountDetailsSection,description=The section containing Account Details for the Opportunity Record Dashboard ui,type=32,subtype=1,uuid=f46dde6f-6752-48e0-8b2d-9b7c07cd913f,parent=21410,parentName=SE CRM SAIL Rules,parentType=2,log=211466,logName=CRM_OpportunityAccountDetailsSection,state=255,visibility=35,security=143,creator=christina.le,createdTimestamp=2015-11-23 17:42:35.0,updatedTimestamp=2015-11-23 17:42:36.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@1dad5484, system=0, preferredEditor=interface, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@341dbd4a, definition=if(ri!dashboardReadOnly,
+		{#"SYSTEM_SYSRULES_sectionLayout"(
+		  label:"Account Details",
+		  isCollapsible: ri!isCollapsible,
+		  isInitiallyCollapsed: if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!isInitiallyCollapsed), false, ri!isInitiallyCollapsed),
+		  firstColumnContents:{
+			/* a!paragraphField(label:"soqlQuery", labelPosition:"ADJACENT",value:rf!soqlQuery,readOnly:true), */
+			
+			if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!dbCrmOpp),
+			#"SYSTEM_SYSRULES_textField"(label:"Account Name", labelPosition:"ADJACENT",value:ri!crmOppSource.nameFromAccount,readOnly:true),
+			#"SYSTEM_SYSRULES_linkField"(label:"Account Name", labelPosition:"ADJACENT",links:#"SYSTEM_SYSRULES_recordLink"(label:ri!crmOppSource.nameFromAccount,recordType:#"_a-0000d72a-ff60-8000-9ba2-011c48011c48_11769" ,identifier:ri!dbCrmOpp.account.customerId))
+			),
+		    #"SYSTEM_SYSRULES_textField"(label:"Industry", labelPosition:"ADJACENT",value:ri!crmOppSource.accountIndustry,readOnly:true),
+		    #"SYSTEM_SYSRULES_textField"(label:"Sales Region", labelPosition:"ADJACENT",value:ri!crmOppSource.regionC,readOnly:true),
+		    if(#"_a-0000d62a-67b3-8000-da6f-010000010000_951"(ri!dbCrmOpp),{},
+		      #"SYSTEM_SYSRULES_textField"(label:"PS Region", labelPosition:"ADJACENT",
+		        value:ri!dbCrmOpp.account.region.regionName,readOnly:true)
+		    )
+		},
+		secondColumnContents:{
+		/* a!textField(label:"Account Executive",value:ri!dbCrmOpp.account.accountExecutive), */
+		
+		  if(#"_a-0000d62a-67b3-8000-da6f-010000010000_951"(ri!dbCrmOpp),{},
+		    #"SYSTEM_SYSRULES_textField"(label:"Account Type", labelPosition:"ADJACENT",value:ri!dbCrmOpp.account.type.name,readOnly:true)),
+		  if(#"_a-0000d62a-67b3-8000-da6f-010000010000_950"(ri!crmOppSource.accountWebsite),{},
+		    #"SYSTEM_SYSRULES_linkField"(label:"Company Website",labelPosition:"ADJACENT",
+		      links:#"SYSTEM_SYSRULES_safeLink"(label:ri!crmOppSource.accountWebsite,uri:#"_a-0000d79c-2e84-8000-9ba2-011c48011c48_24014"(ri!crmOppSource.accountWebsite)))
+		    ),
+		    #"SYSTEM_SYSRULES_linkField"(label:"SalesForce Account Page", labelPosition:"ADJACENT",
+		      links:#"SYSTEM_SYSRULES_safeLink"(label:#"_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013"(ri!truncatedAccountId),uri:#"_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013"(ri!truncatedAccountId) ))			
+		}
+		)},
+		
+		{}
+) /*Ends if*/
+	, dep_types=[Ljava.lang.String;@2cc8b9c9, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@181f95b7, dep_variables=[[Ljava.lang.String;@6fe1eb44},partition=3,partitionName=/usr/local/appian/ae/_admin/accdocs3]
+2015-11-23 21:08:43.232 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: FreeformRule.forum
+2015-11-23 21:08:43.233 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: TypedVariable[name=crmOppSource,it=97,v=<null>]
+2015-11-23 21:08:43.233 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: TypedVariable[name=dashboardReadOnly,it=26,v=<null>]
+2015-11-23 21:08:43.233 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: TypedVariable[name=dbCrmOpp,it=97,v=<null>]
+2015-11-23 21:08:43.233 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: TypedVariable[name=truncatedAccountId,it=97,v=<null>]
+2015-11-23 21:08:43.234 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: TypedVariable[name=isCollapsible,it=97,v=<null>]
+2015-11-23 21:08:43.234 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: TypedVariable[name=isInitiallyCollapsed,it=26,v=<null>]
+2015-11-23 21:08:43.234 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: FreeformRule.parent
+2015-11-23 21:08:43.236 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@4c091207[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[christina.le],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-23 21:08:43.236 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.236 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-23 21:08:43.236 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: ContentRole[name=administrators,usernames=[christina.le],inherit=true,allowForAll=false]
+2015-11-23 21:08:43.237 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.237 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.237 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-23 21:08:43.239 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Exporting binary resources.
+2015-11-23 21:08:43.239 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Serializing object to XML.
+2015-11-23 21:08:43.256 DEBUG content 211466 f46dde6f-6752-48e0-8b2d-9b7c07cd913f Object transported.
+2015-11-23 21:08:43.257 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Exporting binary resources.
+2015-11-23 21:08:43.257 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Serializing object to XML.
+2015-11-23 21:08:43.262 DEBUG application 211473 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_221193 Object transported.

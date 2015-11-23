@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CRM_OpportunityBusinessDetailsSection</name>
+        <uuid>_a-0000dbc0-2835-8000-9ba2-011c48011c48_191601</uuid>
+        <description>The section containing Opportunity Details: Business for the Opportunity Record Dashboard ui</description>
+        <parentUuid>_a-0000d78e-0222-8000-9ba2-011c48011c48_23100</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+  label: &quot;Opportunity Details: Business&quot;,&#xD;
+  isCollapsible: ri!isCollapsible,&#xD;
+  isInitiallyCollapsed: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!isInitiallyCollapsed), false, ri!isInitiallyCollapsed),&#xD;
+  firstColumnContents: {&#xD;
+    if(&#xD;
+      ri!dashboardReadOnly,&#xD;
+      {&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Opportunity Name&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: ri!crmOppSource.name,&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Type&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: ri!crmOppSource.type,&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Total Amount&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: if(&#xD;
+            #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!crmOppSource.amount ),&#xD;
+            &quot;No Amount&quot;,&#xD;
+            dollar( ri!crmOppSource.amount,  0, 0 )&#xD;
+          ),&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Software&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: dollar(ri!crmOppSource.amountSoftwareC, 0 ),&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Services&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: dollar( ri!crmOppSource.amountServicesC, 0 ),&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Maintenance 1st Year&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: dollar(ri!crmOppSource.amountMaintenance1stYearC, 0 ),&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Maintenance Renewal&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: dollar( ri!crmOppSource.amountMaintenanceRenewalC, 0 ),&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Training&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: dollar( ri!crmOppSource.amountTrainingC, 0 ),&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        #&quot;_a-0000d73e-93de-8000-3ca7-0a000064044c_39488&quot;(&#xD;
+          label: &quot;Won/Lost/In Progress?&quot;,&#xD;
+          bool: if(&#xD;
+            tointeger(&#xD;
+              left( ri!crmOppSource.stageName ) ) = 8,&#xD;
+            true(),&#xD;
+            if(&#xD;
+              tointeger(&#xD;
+                left( ri!crmOppSource.stageName  )  ) &lt; 0,&#xD;
+              false(),&#xD;
+              null&#xD;
+            )&#xD;
+          ),&#xD;
+          labelPosition: &quot;ADJACENT&quot;&#xD;
+        )&#xD;
+      },&#xD;
+      {}&#xD;
+    ),&#xD;
+    if(&#xD;
+      ri!dashboardReadOnly,&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Current Stage&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: if(&#xD;
+          #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;( ri!updatedStageName ),&#xD;
+          ri!crmOppSource.stageName,&#xD;
+          ri!updatedStageName&#xD;
+        ),&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_dropdownField&quot;(&#xD;
+        label: &quot;Current Stage&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        placeholderLabel: &quot;Select a stage.&quot;,&#xD;
+        choiceLabels: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115073&quot;,&#xD;
+        choiceValues: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115073&quot;,&#xD;
+        value: if(&#xD;
+          #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;( ri!updatedStageName  ),&#xD;
+          ri!crmOppSource.stageName,&#xD;
+          ri!updatedStageName&#xD;
+        ),&#xD;
+        saveInto: ri!updatedStageName,&#xD;
+        validations: {&#xD;
+          if(&#xD;
+            and(&#xD;
+              contains(&#xD;
+                {&#xD;
+                  &quot;8 - Contract Closed&quot;,&#xD;
+                  &quot;7 - Legal&quot;,&#xD;
+                  &quot;6 - Win Decision&quot;,&#xD;
+                  &quot;5 - Value Analysis&quot;,&#xD;
+                  &quot;4 - Solution Development&quot;&#xD;
+                },&#xD;
+                ri!updatedStageName&#xD;
+              ),&#xD;
+              tointeger(&#xD;
+                ri!crmOppSource.amountMaintenance1stYearC&#xD;
+              ) = 0,&#xD;
+              ri!crmOppSource.type = &quot;Software Sale - Perpetual License&quot;&#xD;
+            ),&#xD;
+            &quot;This opportunity is marked as a perpetual license opportunity. Prior to closing this opportunity, please edit the products and break out the amount for first year maintenance.&quot;,&#xD;
+            null&#xD;
+          ),&#xD;
+          if(&#xD;
+            and(&#xD;
+              contains(&#xD;
+                {&#xD;
+                  &quot;4 - Solution Development&quot;,&#xD;
+                  &quot;5 - Value Analysis&quot;,&#xD;
+                  &quot;6 - Win Decision&quot;,&#xD;
+                  &quot;7 - Legal&quot;,&#xD;
+                  &quot;8 - Contract Closed&quot;&#xD;
+                },&#xD;
+                ri!updatedStageName&#xD;
+              ),&#xD;
+              #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+                ri!crmOppSource.businessProblemProjectC&#xD;
+              )&#xD;
+            ),&#xD;
+            &quot;Project Description is required to advance to the 4 - Solution Development stage and beyond. Please first update Project Description in Salesforce.&quot;,&#xD;
+            null&#xD;
+          ),&#xD;
+          if(&#xD;
+            and(&#xD;
+              contains(&#xD;
+                {&#xD;
+                  &quot;4 - Solution Development&quot;,&#xD;
+                  &quot;5 - Value Analysis&quot;,&#xD;
+                  &quot;6 - Win Decision&quot;,&#xD;
+                  &quot;7 - Legal&quot;,&#xD;
+                  &quot;8 - Contract Closed&quot;&#xD;
+                },&#xD;
+                ri!updatedStageName&#xD;
+              ),&#xD;
+              not(&#xD;
+                ri!crmOppSource.hasOpportunityLineItem&#xD;
+              )&#xD;
+            ),&#xD;
+            &quot;Opportunity products are required to advance to the 4 - Solution Development stage and beyond. Please first update Opportunity Products in Salesforce.&quot;,&#xD;
+            null&#xD;
+          )&#xD;
+        },&#xD;
+        validationGroup: &quot;submit&quot;&#xD;
+      )&#xD;
+    ),&#xD;
+    if(&#xD;
+        ri!dashboardReadOnly,&#xD;
+      {&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Win Probability&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: tointeger(  ri!crmOppSource.probability ) &amp; &quot;%&quot;,&#xD;
+        readOnly: true&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Manager Forecast Status&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: #&quot;_a-0000d981-7235-8000-9ba2-011c48011c48_105190&quot;(ri!crmOppSource.mgrForecastStatusC, &quot;Not Specified&quot;),&#xD;
+          readOnly: true&#xD;
+        )&#xD;
+      },&#xD;
+      {}&#xD;
+    )&#xD;
+    &#xD;
+  },&#xD;
+  secondColumnContents: &#xD;
+  {&#xD;
+  if(&#xD;
+      ri!dashboardReadOnly,&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Close Date&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: #&quot;_a-0000d981-73a0-8000-9ba2-011c48011c48_66825&quot;(&#xD;
+          if(&#xD;
+            #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;( ri!updatedCloseDate  ),&#xD;
+            #&quot;_a-0000da86-913c-8000-9ba2-011c48011c48_102141&quot;(&#xD;
+              ri!crmOppSource.closeDate&#xD;
+            ),&#xD;
+            ri!updatedCloseDate&#xD;
+          )&#xD;
+        ),&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      if(&#xD;
+        ri!isFinance,&#xD;
+        {},&#xD;
+        #&quot;SYSTEM_SYSRULES_dateField&quot;(&#xD;
+          label: &quot;Close Date&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: if(&#xD;
+            #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;( ri!updatedCloseDate  ),&#xD;
+            #&quot;_a-0000da86-913c-8000-9ba2-011c48011c48_102141&quot;( ri!crmOppSource.closeDate  ),&#xD;
+            ri!updatedCloseDate&#xD;
+          ),&#xD;
+          saveInto: ri!updatedCloseDate&#xD;
+        )&#xD;
+      )&#xD;
+    ),&#xD;
+  &#xD;
+  if(&#xD;
+    ri!dashboardReadOnly,&#xD;
+    {&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Opportunity Owner&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: ri!crmOppSource.ownerName,&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Sales Engineer(s)&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: #&quot;_a-0000d943-9a50-8000-9ba2-011c48011c48_61009&quot;(&#xD;
+          ri!crmOppSource.technicalResourceC&#xD;
+        ) &amp; &quot;     &quot; &amp; #&quot;_a-0000d943-9a50-8000-9ba2-011c48011c48_61009&quot;(&#xD;
+          ri!crmOppSource.additionalSalesEngineerC&#xD;
+        ),&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Lead Source&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: ri!crmOppSource.leadSource,&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      if(&#xD;
+        #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+          ri!crmOppSource.primaryPartnerAccountSfIdC&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Primary Partner Name&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: &quot;Not Specified&quot;,&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        if(&#xD;
+          #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+            #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+              ri!crmOppSource.primaryPartnerAccountSfIdC,&#xD;
+              ri!type3&#xD;
+            ).data&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+            label: &quot;Primary Partner Name&quot;,&#xD;
+            labelPosition: &quot;ADJACENT&quot;,&#xD;
+            value: #&quot;bce4789d-726c-44c0-b613-738201cbcb1b&quot;(&#xD;
+              ri!crmOppSource.primaryPartnerAccountSfIdC&#xD;
+            ),&#xD;
+            readOnly: true()&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+            label: &quot;Primary Partner Name&quot;,&#xD;
+            labelPosition: &quot;ADJACENT&quot;,&#xD;
+            links: #&quot;SYSTEM_SYSRULES_recordLink&quot;(&#xD;
+              Label: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+                ri!crmOppSource.primaryPartnerAccountSfIdC,&#xD;
+                ri!type3&#xD;
+              ).data.fullName,&#xD;
+              recordType: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115323&quot;,&#xD;
+              identifier: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+                ri!crmOppSource.primaryPartnerAccountSfIdC,&#xD;
+                ri!type3&#xD;
+              ).data.customerId&#xD;
+            )&#xD;
+          )&#xD;
+        )&#xD;
+      ),&#xD;
+      if(&#xD;
+        #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+          ri!crmOppSource.secondaryPartnerAccountSfIdC&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Secondary Partner Name&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: &quot;Not Specified&quot;,&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        if(&#xD;
+          #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+            #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+              ri!crmOppSource.secondaryPartnerAccountSfIdC,&#xD;
+              ri!type3&#xD;
+            ).data&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+            label: &quot;Secondary Partner Name&quot;,&#xD;
+            labelPosition: &quot;ADJACENT&quot;,&#xD;
+            value: #&quot;bce4789d-726c-44c0-b613-738201cbcb1b&quot;(&#xD;
+              ri!crmOppSource.secondaryPartnerAccountSfIdC&#xD;
+            ),&#xD;
+            readOnly: true()&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+            label: &quot;Secondary Partner Name&quot;,&#xD;
+            labelPosition: &quot;ADJACENT&quot;,&#xD;
+            links: #&quot;SYSTEM_SYSRULES_recordLink&quot;(&#xD;
+              Label: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+                ri!crmOppSource.secondaryPartnerAccountSfIdC,&#xD;
+                ri!type3&#xD;
+              ).data.fullName,&#xD;
+              recordType: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115323&quot;,&#xD;
+              identifier: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+                ri!crmOppSource.secondaryPartnerAccountSfIdC,&#xD;
+                ri!type3&#xD;
+              ).data.customerId&#xD;
+            )&#xD;
+          )&#xD;
+        )&#xD;
+      ),&#xD;
+      if(&#xD;
+        #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+          ri!crmOppSource.tertiaryPartnerAccountSfIdC&#xD;
+        ),&#xD;
+        #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+          label: &quot;Tertiary Partner Name&quot;,&#xD;
+          labelPosition: &quot;ADJACENT&quot;,&#xD;
+          value: &quot;Not Specified&quot;,&#xD;
+          readOnly: true&#xD;
+        ),&#xD;
+        if(&#xD;
+          #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+            #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+              ri!crmOppSource.tertiaryPartnerAccountSfIdC,&#xD;
+              ri!type3&#xD;
+            ).data&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+            label: &quot;Tertiary Partner Name&quot;,&#xD;
+            labelPosition: &quot;ADJACENT&quot;,&#xD;
+            value: #&quot;bce4789d-726c-44c0-b613-738201cbcb1b&quot;(&#xD;
+              ri!crmOppSource.tertiaryPartnerAccountSfIdC&#xD;
+            ),&#xD;
+            readOnly: true()&#xD;
+          ),&#xD;
+          #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+            label: &quot;Tertiary Partner Name&quot;,&#xD;
+            labelPosition: &quot;ADJACENT&quot;,&#xD;
+            links: #&quot;SYSTEM_SYSRULES_recordLink&quot;(&#xD;
+              Label: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+                ri!crmOppSource.tertiaryPartnerAccountSfIdC,&#xD;
+                ri!type3&#xD;
+              ).data.fullName,&#xD;
+              recordType: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115323&quot;,&#xD;
+              identifier: #&quot;_a-0000dac7-230c-8000-9ba2-011c48011c48_115315&quot;(&#xD;
+                ri!crmOppSource.tertiaryPartnerAccountSfIdC,&#xD;
+                ri!type3&#xD;
+              ).data.customerId&#xD;
+            )&#xD;
+          )&#xD;
+        )&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Partner Role&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: if(&#xD;
+          #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(&#xD;
+            ri!crmOppSource.partnerRoleC&#xD;
+          ),&#xD;
+          &quot;Not Specified&quot;,&#xD;
+          ri!crmOppSource.partnerRoleC&#xD;
+        ),&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+        label: &quot;Deal Type&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value: ri!crmOppSource.softwareDealTypeC,&#xD;
+        readOnly: true&#xD;
+      ),&#xD;
+      if(&#xD;
+        #&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;( ri!dbCrmOpp ),&#xD;
+        {},&#xD;
+        with(&#xD;
+          local!sa: index(&#xD;
+            ri!dbCrmOpp,&#xD;
+            &quot;solutionAreas&quot;,&#xD;
+            null&#xD;
+          ),&#xD;
+          {&#xD;
+            #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
+              label: &quot;Potential Projects&quot;,&#xD;
+              labelPosition: &quot;ADJACENT&quot;,&#xD;
+              value: #&quot;_a-0000d78e-0222-8000-9ba2-011c48011c48_23208&quot;(&#xD;
+                local!sa&#xD;
+              ),&#xD;
+              readOnly: true&#xD;
+            ),&#xD;
+            #&quot;_a-0000d73e-93de-8000-3ca7-0a000064044c_39488&quot;(&#xD;
+              label: &quot;Responded to RFI/RFP?&quot;,&#xD;
+              bool: or(&#xD;
+                ri!dbCrmOpp.respondedToRFI,&#xD;
+                ri!dbCrmOpp.respondedToRFP&#xD;
+              ),&#xD;
+              labelPosition: &quot;ADJACENT&quot;&#xD;
+            )&#xD;
+          }&#xD;
+        )&#xD;
+      ),&#xD;
+      #&quot;994fea4a-f42f-45af-8b36-44d8dc571752&quot;(&#xD;
+        compArray: if(&#xD;
+          isnull(&#xD;
+            ri!sfOpportunityCompetitor.result.result&#xD;
+          ),&#xD;
+          null,&#xD;
+          ri!sfOpportunityCompetitor.result.result.OpportunityCompetitor.CompetitorName&#xD;
+        ),&#xD;
+        labelPosition: &quot;ADJACENT&quot;&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+        label: &quot;SalesForce Opportunity Page&quot;,&#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        links: #&quot;SYSTEM_SYSRULES_safeLink&quot;(&#xD;
+          label: #&quot;_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013&quot;(&#xD;
+            ri!crmOppSource.id&#xD;
+          ),&#xD;
+          uri: #&quot;_a-0000db23-cbc2-8000-9ba2-011c48011c48_149013&quot;(&#xD;
+            ri!crmOppSource.id&#xD;
+          )&#xD;
+        )&#xD;
+      )&#xD;
+    },&#xD;
+    {}&#xD;
+  )&#xD;
+  }&#xD;
+)</definition>
+        <namedTypedValue>
+            <name>crmOppSource</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>dashboardReadOnly</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>dbCrmOpp</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>updatedStageName</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>updatedCloseDate</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isFinance</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>type3</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>sfOpportunityCompetitor</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isCollapsible</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isInitiallyCollapsed</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>crmOppSource</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>dashboardReadOnly</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>dbCrmOpp</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>updatedStageName</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>updatedCloseDate</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>isFinance</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>type3</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>sfOpportunityCompetitor</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>isCollapsible</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>isInitiallyCollapsed</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul>

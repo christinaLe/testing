@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CRM_OpportunityNextStepsAndNotesSection</name>
+        <uuid>e062d6eb-14a8-465b-9c19-7d9cd3ef4fcb</uuid>
+        <description>The section containing Next Steps and Notes for the Opportunity Dashboard</description>
+        <parentUuid>_a-0000d78e-0222-8000-9ba2-011c48011c48_23100</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>if(&#xD;
+  or(ri!dashboardReadOnly, ri!salesUpdate),&#xD;
+  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+    label:&quot;Next Steps and Notes&quot;,&#xD;
+    isCollapsible: ri!isCollapsible,&#xD;
+    isInitiallyCollapsed: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!isInitiallyCollapsed), false, ri!isInitiallyCollapsed),&#xD;
+    firstColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+        label:&quot;Next Steps&quot;, &#xD;
+    	  labelPosition:&quot;ADJACENT&quot;,&#xD;
+        value: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!updatedNextStepC),ri!crmOppSource.nextStepC,ri!updatedNextStepC),&#xD;
+      	saveInto:ri!updatedNextStepC,&#xD;
+      	readOnly:ri!dashboardReadOnly&#xD;
+      ),&#xD;
+      #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+        label:&quot;Manager Notes&quot;, &#xD;
+    	  labelPosition:&quot;ADJACENT&quot;,&#xD;
+        value: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!updatedMgrNotesC),ri!crmOppSource.mgrNotesC,ri!updatedMgrNotesC),&#xD;
+      	saveInto:ri!updatedMgrNotesC,&#xD;
+      	readOnly:ri!dashboardReadOnly&#xD;
+      )		  &#xD;
+    },&#xD;
+    secondColumnContents:{&#xD;
+      #&quot;SYSTEM_SYSRULES_paragraphField&quot;(&#xD;
+        label:&quot;Opportunity Notes (Business)&quot;, &#xD;
+        labelPosition: &quot;ADJACENT&quot;,&#xD;
+        value:if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(ri!updatedReportNotesC),ri!crmOppSource.reportNotesC,ri!updatedReportNotesC)&#xD;
+    	/* rule!APN_truncate(text:ri!crmOppSource.reportNotesC,limit:1000) */&#xD;
+      	,&#xD;
+      	saveInto:ri!updatedReportNotesC,&#xD;
+      	readOnly:ri!dashboardReadOnly&#xD;
+      	)&#xD;
+      }&#xD;
+    ),&#xD;
+    {}&#xD;
+)</definition>
+        <namedTypedValue>
+            <name>crmOppSource</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>dashboardReadOnly</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>salesUpdate</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>updatedNextStepC</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>updatedMgrNotesC</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>updatedReportNotesC</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isCollapsible</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>isInitiallyCollapsed</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>christina.le</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>crmOppSource</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>dashboardReadOnly</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>salesUpdate</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>updatedNextStepC</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>updatedMgrNotesC</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>updatedReportNotesC</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>isCollapsible</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>isInitiallyCollapsed</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul>
